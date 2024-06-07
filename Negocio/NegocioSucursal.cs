@@ -92,17 +92,22 @@ namespace Negocio
 
         public bool EliminarSucursal(Sucursal objSucursal)
         {
+            //PARTE 1
             AccesoDatos objDatos = new AccesoDatos();
 
+            //PARTE 2
             string consulta = "DELETE FROM Sucursal WHERE Sucursal.Id_Sucursal=" + objSucursal.IdSucursal1;
 
+            //PARTE 3
             objDatos.setearConsulta(consulta);
 
+            //PARTE 4
             if (objDatos.ejecutarAccion())
             {
                 objDatos.cerrarConexion();
                 return true;
             }
+            //PARTE 5
             else
             {
                 objDatos.cerrarConexion();
